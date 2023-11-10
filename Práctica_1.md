@@ -75,7 +75,7 @@ $systemctl restart rsyslog
 
 * * *
 
-##Comprobación
+## Comprobación
 
 1. Desde el cliente enviamos un registro con logger
 
