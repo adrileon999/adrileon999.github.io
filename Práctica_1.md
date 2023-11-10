@@ -4,7 +4,7 @@
 
 Los logs centralizados son una práctica esencial en la gestión de registros informáticos. Consisten en recopilar y almacenar registros de múltiples fuentes en un único lugar, lo que facilita la supervisión, la seguridad y la resolución de problemas en entornos tecnológicos. Esta centralización ofrece ventajas clave, como una gestión más eficiente, una visión global de sistemas y una mejora en la seguridad.
 
-==========================================================================
+* * *
 
 ## Desarrollo
 
@@ -72,7 +72,9 @@ $ufw allow 514/udp
 ```bash
 $systemctl restart rsyslog
 ```
-==============================================
+
+* * *
+
 ##Comprobación
 
 1. Desde el cliente enviamos un registro con logger
