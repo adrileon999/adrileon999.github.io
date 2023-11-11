@@ -9,10 +9,19 @@ El objetivo de la práctica es aprender a usar y configurar las políticas, usan
 
 ## Desarrollo
 
-1. Instalación
-
-Lo fundamental para empezar a trabajar es instalar lo siguiente
+1. Lo fundamental para empezar a trabajar es instalar lo siguiente.
 
 ```bash
     $ sudo apt install libpwquality-tools
 ```
+
+2. Para empezar a asignar políticas debemos acceder al fichero **/etc/security/pwquality.conf**.
+
+```bash
+    $ sudo nano /etc/security/pwquality.conf
+```
+
+3. Para demostrar su correcto uso yo voy a usar la siguiente configuración, descomentando las líneas que me interesan y ajustandole a los parámetros que necesite.
+
+```bash
+
