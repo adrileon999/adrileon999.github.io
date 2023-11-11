@@ -7,11 +7,20 @@ Las Listas de Control de Acceso (ACL) son conjuntos de reglas que controlan el a
 ## Desarrollo
 
 Para empezar vamos a simular una estructura de carpetas:
-```bash
 
+```bash
 COMPARTIDO_DE_GRUPOS
     ├── ESO1
     ├── ESO2
     ├── STUDENTS
     └── TEACHERS
 ```
+También crearemos unos usuarios y unos grupos.
+
+|Usuarios|Grupos|
+|-|-|
+|Teacher1|teachers|
+|Teacher2|teachers|
+|Student1|students, eso1|
+|Student2|students, eso2|
+|Student3|students|
