@@ -17,11 +17,28 @@ COMPARTIDO_DE_GRUPOS
 ```
 También crearemos unos usuarios y unos grupos.
 
-|Usuarios|Grupos|
+|Nombre del usuario|Grupos a los que pertenece|
 |-|-|
-|Student1|students, eso1|
-|Student2|students, eso2|
-|Student3|students|
-|Teacher1|teachers|
-|Teacher2|teachers, eso2|
+|student1|students, eso1|
+|student2|students, eso2|
+|student3|students|
+|teacher1|teachers|
+|teacher2|teachers|
 
+En este caso queremos que en las carpetas ESO1 y ESO2, los profesores puedan leer y escribir y que los alumnos tengan permisos de solo lectura. En la carpeta de STUDENTS, todos tendrán permisos de lectura y escritura y por último en la carpeta de TEACHERS, solo teacher1 tendrá permisos de lectura y escritura y los demas profesores solo lectura. Así pues, estos serían los pasos a seguir:
+
+- En las carpeta ESO1 y ESO2, otorgamos permisos de lectura y escritura a teachers y de lectura al grupo eso1.
+    ```bash
+    $ sudo setfacl -Rdm g:eso1:r,g:teachers:rw /COMPARTIDA_DE_GRUPO/ESO1 /COMPARTIDA_DE_GRUPO/ESO2
+    ```
+- En la carpeta STUDENTS, tanto teachers como students tendrán permiso de lectura y escritura
+    ```bash
+    $ sudo setfacl -Rdm g:students:rw,g:teachers:rw /COMPARTIDA_DE_GRUPO/STUDENTS
+    ```
+- En la carpeta TEACHERS, teacher1 tiene permisos de lectura y escritura y los demás profesores solo lectura
+    ```bash
+    $ sudo setfacl -Rdm u:teacher1:rw,g:teachers:r /COMPARTIDA_DE_GRUPO/TEACHERS
+***
+## Comprobación
+
+  
