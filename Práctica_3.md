@@ -45,12 +45,12 @@ Vamos a realizar unas pruebas como por ejemplo:
 
 ```bash 
 $ su student1
-$ cd /CONTENIDO_DE_GRUPO/ESO1/
+$ cd /CONTENIDO_DE_GRUPO/ESO1
 $ touch prueba1.txt
-touch: no se puede efectuar `touch' sobre 'prueba1.txt': Permiso denegado
+touch: no se puede efectuar 'touch' sobre 'prueba1.txt': Permiso denegado
 
 $ su teacher2
-$ cd /CONTENIDO_DE_GRUPO/TEACHERS/
+$ cd /CONTENIDO_DE_GRUPO/TEACHERS
 $ touch prueba2.txt
-touch: no se puede efectuar `touch' sobre 'prueba2.txt': Permiso denegado
+touch: no se puede efectuar 'touch' sobre 'prueba2.txt': Permiso denegado
 ```
