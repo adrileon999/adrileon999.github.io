@@ -71,6 +71,7 @@ Primero actualizamos los repositorios e instalamos easy-rsa
       $ sudo update-ca-certificates
    ```
    En el apartado de Firefox añadimos el certificado y ya habremos acabado con esta parte.
+   ![tux](certificado.png)
    
 
       
