@@ -59,5 +59,18 @@ Primero actualizamos los repositorios e instalamos easy-rsa
   ```bash
       $ cat ~/easy-rsa/pki/ca.crt
   ```
+   Esto nos va dar nuestro certificado, debemos exportarlo a la máquina cliente incluyendo las líneas de BEGIN CERTIFICATE y END CERTIFICATE
+
+   En el cliente creamos el siguiente archivo y pegamos el contenido que acabamos de exportar.
+   ```bash
+      $ nano /tmp/ca.crt
+   ```
+   Ahora tenemos que importar el certificado y actualizar.
+   ```bash
+      $ sudo cp /tmp/ca.crt /usr/local
+      $ sudo update-ca-certificates
+   ```
+   En el apartado de Firefox añadimos el certificado y ya habremos acabado con esta parte.
+   
 
       
