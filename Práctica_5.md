@@ -1,7 +1,9 @@
 # Introducción
 
 Un certificado SSL es crucial para la seguridad en línea, ya que cifra la información, autentica el sitio web, y protege contra la manipulación de datos. Esto inspira confianza en los usuarios, mejora el SEO y cumple con requisitos normativos.
+
 * * *
+
 ## Desarrollo
 
 1. Instalar Easy-RSA
@@ -122,7 +124,9 @@ Primero actualizamos los repositorios e instalamos easy-rsa
    ```bash
    10.0.2.15   adrian-server
    ```
+   
 * * *
+
 ## Comprobación
 
 A través del navegador comprobamos que todo funcione correctamente
