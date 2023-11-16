@@ -1,5 +1,6 @@
 # Introducción
 
+Un certificado SSL es crucial para la seguridad en línea, ya que cifra la información, autentica el sitio web, y protege contra la manipulación de datos. Esto inspira confianza en los usuarios, mejora el SEO y cumple con requisitos normativos.
 * * *
 ## Desarrollo
 
@@ -125,4 +126,5 @@ Primero actualizamos los repositorios e instalamos easy-rsa
 ## Comprobación
 
 A través del navegador comprobamos que todo funcione correctamente
+
 ![tux](https.png)
