@@ -59,9 +59,9 @@ Primero actualizamos los repositorios e instalamos easy-rsa
   ```bash
       $ cat ~/easy-rsa/pki/ca.crt
   ```
-   Esto nos va dar nuestro certificado, debemos exportarlo a la máquina cliente incluyendo las líneas de BEGIN CERTIFICATE y END CERTIFICATE
+   Esto nos va dar nuestro certificado, debemos copiarlo incluyendo las líneas de BEGIN CERTIFICATE y END CERTIFICATE
 
-   En el cliente creamos el siguiente archivo y pegamos el contenido que acabamos de exportar.
+   Creamos el siguiente archivo y pegamos el contenido que acabamos de cppiar.
    ```bash
       $ nano /tmp/ca.crt
    ```
@@ -73,5 +73,56 @@ Primero actualizamos los repositorios e instalamos easy-rsa
    En el apartado de Firefox añadimos el certificado y ya habremos acabado con esta parte.
    ![tux](certificado.png)
    
+5. Crear CSR
 
-      
+   Primero instalamos OpenSSL
+   ```bash
+      $ sudo apt-get install openssl
+   ```
+   Ahora creamos un directorio para generar la clave privada
+   ```bash
+      $ mkdir ~/practice-rsa
+      $ cd ~/practice-rsa
+      $ openssl genrsa -out adrian-server.key
+   ```
+   Contando con la clave privada, usando de nuevo OpenSSL, creamos un CSR
+   ```bash
+      $ openssl req -new -key adrian-server.key -out adrian-server.req
+   ```
+   Copiamos el archivo al directorio temporal
+   ```bash
+      $ cp adrian-server.req /tmp/adrian-server.req
+   ```
+   
+6. Firmar CSR
+
+   Importamos la solicitudad de certificado
+   ```bash
+      $ cd ~/easy-rsa
+      $ ./easyrsa import-req /tmp/adrian-server.req adrian-server
+   ```
+   Firmamos la solicitud con el siguiente comando
+   ```bash
+      $ ./easyrsa sign-req server adrian-server
+   ```
+7. Configurar Apache
+   
+   Editamos las lineas del archivo /etc/apache2/sites-available/default-ssl.conf.
+   ```bash
+   SSLCertificateFile      /etc/ssl/certs/adrian-server.crt     
+   SSLCertificateKeyFile /etc/ssl/private/adrian-server.key
+   ```
+   Activamos el sitio SSL
+   ```bash
+      $ sudo a2ensite default-ssl
+      $ sudo systemctl restart apache2
+   ```
+   Editamos el fichero /etc/hosts para añadir nuestra ip junto a nuestro nombre de certificado:
+   ```bash
+   10.0.2.15   adrian-server
+   ```
+* * *
+## Comprobación
+
+A través del navegador comprobamos que todo funcione correctamente
+![tux](https.png)
