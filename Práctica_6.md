@@ -146,11 +146,11 @@ Habilitamos el módulo ssl y activamos el sitio. Después reiniciamos.
 
     Hay ciertas directivas en el archivo de configuración que nos ayudaran a hacerlo más seguro, como pueden ser:
 
-    - TimeOut. Esta directiva controla el tiempo de espera tanto para la recepción de datos como para el envío de datos.
-    - MaxClients. Este valor establece el límite en la cantidad de procesos hijos o subprocesos que Apache puede crear para atender las solicitudes de los clientes.
-    - KeepAliveTimeout. Keep-Alive es un mecanismo que permite a la conexión entre el cliente y el servidor permanecer abierta después de que se haya completado una solicitud, permitiendo que varias solicitudes se realicen a través de la misma conexión.
-    - LimitRequestFields. Esta directiva establece un límite en la cantidad de campos de encabezado de solicitud HTTP aceptados por los clientes.
-    - LimitRequestFieldSize. Se utiliza para establecer un límite en el tamaño de los campos de encabezado de las solicitudes HTTP. Estos campos de encabezado incluyen información como cookies, información de autenticación, encabezados personalizados, etc.
+    - **TimeOut.** Esta directiva controla el tiempo de espera tanto para la recepción de datos como para el envío de datos.
+    - **MaxClients.** Este valor establece el límite en la cantidad de procesos hijos o subprocesos que Apache puede crear para atender las solicitudes de los clientes.
+    - **KeepAliveTimeout.** Keep-Alive es un mecanismo que permite a la conexión entre el cliente y el servidor permanecer abierta después de que se haya completado una solicitud, permitiendo que varias solicitudes se realicen a través de la misma conexión.
+    - **LimitRequestFields.** Esta directiva establece un límite en la cantidad de campos de encabezado de solicitud HTTP aceptados por los clientes.
+    - **LimitRequestFieldSize.** Se utiliza para establecer un límite en el tamaño de los campos de encabezado de las solicitudes HTTP. Estos campos de encabezado incluyen información como cookies, información de autenticación, encabezados personalizados, etc.
     
 
    
