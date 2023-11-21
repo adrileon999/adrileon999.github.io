@@ -1,9 +1,11 @@
 # Introducción
 
+La optimización de la seguridad en un servidor web Apache es esencial para protegerlo contra posibles amenazas y vulnerabilidades. El proceso de fortalecimiento de la seguridad, conocido como "hardening", implica implementar medidas y configuraciones específicas destinadas a reducir la superficie de ataque y fortalecer la resistencia del servidor frente a posibles ataques. 
 * * *
+
 ## Desarrollo
 
-1. Como ocultar la versión e información de Apache
+### 1. Como ocultar la versión e información de Apache
 
   Introducimos el siguiente comando
    ```bash
@@ -18,7 +20,7 @@
   ```bash
       $ sudo systemctl restart apache2
   ```
-2. Deshabilitar el listado de directorios en Apache
+### 2. Deshabilitar el listado de directorios en Apache
 
   Para hacer la prueba creamos el directorio /var/www/html/test y creamos varios archivos
   ```bash
@@ -32,7 +34,7 @@
       Options -Indexes
     </Directory>
 
-3. Actualización regular de Apache
+### 3. Actualización regular de Apache
 
    Simplemente hacemos un apt update y apt upgrade
 
@@ -40,7 +42,7 @@
        $ sudo apt update
        $ sudo apt upgrade
    ```
-4. Usar la encriptación HTTPS en Apache
+### 4. Usar la encriptación HTTPS en Apache
 
 Habilitamos el módulo ssl y activamos el sitio. Después reiniciamos.
 
@@ -49,7 +51,7 @@ Habilitamos el módulo ssl y activamos el sitio. Después reiniciamos.
       $ sudo a2ensite default-ssl.conf
       $ sudo service apache2 restart
   ```
-5. Habilitar la Seguridad de Transporte HTTP Estricta (HSTS) en Apache
+### 5. Habilitar la Seguridad de Transporte HTTP Estricta (HSTS) en Apache
 
    Habilitamos el módulo headers y reiniciamos el servicio
    
@@ -66,7 +68,7 @@ Habilitamos el módulo ssl y activamos el sitio. Después reiniciamos.
        </VirtualHost>
    ```
 
-6. Habilitar HTTP/2 en Apache
+### 6. Habilitar HTTP/2 en Apache
 
    Habilitamos el módulo http2
    ```bash
@@ -78,7 +80,7 @@ Habilitamos el módulo ssl y activamos el sitio. Después reiniciamos.
    ```
    Por último reiniciamos.
 
-7. Deshabilitar la directiva ServerSignature en Apache
+### 7. Deshabilitar la directiva ServerSignature en Apache
 
    En el archivo de configuración de apache debemos buscar la opción ServerSignature y ponerla en Off
    ```bash
@@ -87,13 +89,13 @@ Habilitamos el módulo ssl y activamos el sitio. Después reiniciamos.
 
    Reiniciamos.
 
-8. Asignar la directiva ServerTokens a Prod
+### 8. Asignar la directiva ServerTokens a Prod
 
    Igual que en el paso anterior, pero con la opción ServerTokens
    ```bash
        ServerTokens Off
    ```
-9. Deshabilitar módulos innecesarios
+### 9. Deshabilitar módulos innecesarios
 
    Podemos ver los módulos que tenemos habilitados con
    ```bash
@@ -110,7 +112,7 @@ Habilitamos el módulo ssl y activamos el sitio. Después reiniciamos.
        $ sudo a2dismod rewrite
    ```
    
-10. Limitar el tamaño de los archivos que se suben a Apache
+### 10. Limitar el tamaño de los archivos que se suben a Apache
 
     Debemos añadir las siguientes líneas en nuestro archivo de configuración. 4194304 es el equivalente a 4MB
     ```bash
@@ -121,7 +123,7 @@ Habilitamos el módulo ssl y activamos el sitio. Después reiniciamos.
 
     Hay que reiniciar.
 
-11. Arrancar Apache con un usuario y grupo separado
+### 11. Arrancar Apache con un usuario y grupo separado
 
     Creamos el grupo y añadimos el usuario
     ```bash
@@ -142,7 +144,7 @@ Habilitamos el módulo ssl y activamos el sitio. Después reiniciamos.
 
     Reiniciamos Apache.
 
-12. Protección ante ataque DDoS y Hardening
+### 12. Protección ante ataque DDoS y Hardening
 
     Hay ciertas directivas en el archivo de configuración que nos ayudaran a hacerlo más seguro, como pueden ser:
 
