@@ -1,4 +1,4 @@
-## Unidad 1
+## 2023/2024
 
 ### [1. Logs centralizados](Práctica_1.md)
 
@@ -12,10 +12,6 @@
 
 ### [6. Hardening Apache](Práctica_6.md)
 
-### [7. Práctica -](practica7.md)
+## 2024/2025
 
-### [8. Práctica -](practica8.md)
-
-### [9. Práctica -](practica9.md)
-
-### [10. Práctica -](practica10.md)
+### [1. Logs centralizados](https://github.com/ASIR2-SGD/p1-logs-centralizados-adrileon999/blob/main/P1_Log_centralizados.md)
